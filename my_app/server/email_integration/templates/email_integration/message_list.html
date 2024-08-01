@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Integration</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Email Messages</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Import Messages</button>
+    </form>
+    <div id="progress-bar">
+        <div id="progress-status">Reading messages...</div>
+        <div id="progress-bar-inner"></div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Sent Date</th>
+                <th>Received Date</th>
+                <th>Body</th>
+                <th>Attachments</th>
+            </tr>
+        </thead>
+        <tbody id="message-table-body">
+            {% for message in messages %}
+            <tr>
+                <td>{{ message.subject }}</td>
+                <td>{{ message.sent_date }}</td>
+                <td>{{ message.received_date }}</td>
+                <td>{{ message.body|truncatechars:50 }}</td>
+                <td>{{ message.attachments }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

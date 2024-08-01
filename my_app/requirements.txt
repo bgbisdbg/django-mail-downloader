@@ -1,0 +1,9 @@
+channels==4.0.0
+channels-redis==4.1.0
+daphne==4.0.0
+Django==5.0.7
+djangorestframework==3.15.2
+redis==5.0.7
+psycopg2 == 2.9.9
+redis==5.0.7
+pyzmail36==1.0.5

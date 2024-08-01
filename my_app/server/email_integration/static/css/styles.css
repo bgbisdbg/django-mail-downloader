@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+#progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#progress-bar-inner {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    transition: width 0.5s ease;
+}
+#progress-status {
+    margin-bottom: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+.completed {
+    animation: fadeIn 1s;
+    color: #4CAF50;
+    font-weight: bold;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
